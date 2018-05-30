@@ -9,7 +9,10 @@ namespace RandomNameGen
 	class Program
 	{
 		static void Main(string[] args)
+
 		{
+			//Add or remove as many strings as you would like to the Prefix, Base and Suffix Arrays.
+			//Empty quotation marks will add a chance for the weapon to roll without that value.
 			string[] Prefix = {"Strong ", "Solid ", "Mighty ", "Smoldering ", "Molten ", "Scorching ", "Frost ", "Frozen ", "Shivering " ,
 			"Shocking ", "Conductive ", "Electifying ", "Rancid ", "Putrid ", "Toxic ", "Cultic ", "Enigmatic ", "Rusted ",
 			"Demonic ", "Angelic ", "Venomous ", "Courupt","" ,"" ,"" ,"" ,"" ,"" ,"" };
@@ -20,11 +23,11 @@ namespace RandomNameGen
 			" of Agony", " of Horror", " of Phasing", " of stench", " of Pestilence", " of Plague", " of Sacrifice", " of Justice", "of Loathing",
 			" of Giants", "of Reason", " of the Council", " of Calamity" , " of Couruption", " of Ritual", " of Pride",
 				" of Grief", "" ,"" ,"" ,"" ,"" ,"" ,"" };
-			int prefixlength = Prefix.Length;
-			int BaseLength = Base.Length;
-			int SuffixLength = Suffix.Length;
+			int prefixlength = Prefix.Length;// Don't mess with these values
+			int BaseLength = Base.Length;// Don't mess with these values
+			int SuffixLength = Suffix.Length;// Don't mess with these values
 
-			for (int x = 0; x < 100; ++x) {
+			for (int x = 0; x < 100; ++x) { // default setting is 100, the number of weapon names this will generate.
 				Random Rpfix = new Random();
 				int rpfx = Rpfix.Next(prefixlength);
 				System.Threading.Thread.Sleep(10);
@@ -34,9 +37,10 @@ namespace RandomNameGen
 				Random ransfix = new Random();
 				int rsfx = ransfix.Next(SuffixLength);
 				System.Threading.Thread.Sleep(10);
-				string FinalString = Prefix[rpfx] + Base[rbase] + Suffix[rsfx];
-				Console.WriteLine(FinalString);
+				string WeaponName = Prefix[rpfx] + Base[rbase] + Suffix[rsfx];
+				Console.WriteLine(WeaponName);
 			}
+
 			
 		}
 	}
